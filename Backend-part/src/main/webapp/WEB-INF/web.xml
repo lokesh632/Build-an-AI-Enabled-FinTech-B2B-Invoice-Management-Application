@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>highradius-backend</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list> 
+ <servlet>
+    <servlet-name>FetchServlet</servlet-name>
+    <servlet-class>com.highradius.FetchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FetchServlet</servlet-name>
+    <url-pattern>/fetchData</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddResponse</servlet-name>
+    <servlet-class>com.highradius.AddResponse</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddResponse</servlet-name>
+    <url-pattern>/addActor</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>EditResponse</servlet-name>
+    <servlet-class>com.highradius.EditResponse</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditResponse</servlet-name>
+    <url-pattern>/editActor</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DeleteResponse</servlet-name>
+    <servlet-class>com.highradius.DeleteResponse</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteResponse</servlet-name>
+    <url-pattern>/deleteActor</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdvanceSearch</servlet-name>
+    <servlet-class>com.highradius.AdvanceSearch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdvanceSearch</servlet-name>
+    <url-pattern>/advActor</url-pattern>
+  </servlet-mapping>
+  <filter>
+  <filter-name>CorsFilter</filter-name>
+  <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+  <init-param>
+    <param-name>cors.allowed.origins</param-name>
+    <param-value>http://localhost:3000</param-value>
+  </init-param>
+</filter>
+<filter-mapping>
+  <filter-name>CorsFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+</web-app>
